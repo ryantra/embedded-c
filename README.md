@@ -68,10 +68,13 @@ Open syscalls.c file and paste following code bellow Includes
 
 
 //Debug Exception and Monitor Control Register base address
+
 #define DEMCR                   *((volatile uint32_t*) 0xE000EDFCU )
 
 /* ITM register addresses */
+
 #define ITM_STIMULUS_PORT0      *((volatile uint32_t*) 0xE0000000 )
+
 #define ITM_TRACE_EN            *((volatile uint32_t*) 0xE0000E00 )
 
 void ITM_SendChar(uint8_t ch)
