@@ -4,34 +4,50 @@ This project generally  contains a source code which is tested for STM-NUCLEOF41
 Host Machine was Ubuntu 20.04. This project gave hands-on exposure for Mastering Modern Embedded C
 coding style technique and its optimization.
 
-Following step were peform strickly to (Environment setup) build, debug and running the code sucessfully.
+Following step were perfom strickly to (Environment setup) build, debug and running the code successfully.
 
 1.STM32CubeIDE Generic Linux Installer.
 
 Once zip downloaded and extracted you get a .sh script file.
-Make it executable (chmod +x ***.sh) and launch it from a terminal.
+Make it executable (chmod +x ***.sh)
  
 For Ubuntu, either:
-    1. sudo ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle​.sh
+   
+   1. sudo ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle​.sh
+
 or 
-    1. ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64​.sh
+   
+   1. ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64​.sh
+
 The 2nd will ask you later to execute some install steps as sudo. This is required since STLink-Server, Udev rules for 
 STLink/Jlink installation need to change some basic system settings.
 
 2.GCC Compiler on Linux
+
 Before installing the GCC compiler on your Linux system, you need to check whether it is already installed on your system or not.
+
 gcc –version
+
 If gcc is installed already skip this step and jump into next step, otherwise 
 sudo apt install build-essential
 
 
 3.FPU warning fix
 
-Right click on the project -> properties -> expand C/C++ build -> Settings -> Tool settings -> MCU settings
+Right click on the project 
+                        -> properties
+                                    -> expand C/C++ build 
+                                                        -> Settings 
+                                                                    -> Tool settings 
+                                                                                    -> MCU settings
+                                                                                    
     • Floating-point unit: None 
+    
     • Floating-point ABI: Software implementation ( -mfloat-abi=soft ) 
-                    1. 
+                  
+                  
 4.Setting up SWV ITM Data Console
+
 Open syscalls.c file and paste following code bellow Includes
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
