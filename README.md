@@ -100,9 +100,12 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
 }
 
 5.Debug Configuration Setting for Serial Wire Viewer
+
 In Debugger Menu under Serial Wire Viewer(SWV) make SWV enable with following settings
-  -> Clock Setting
+    -> Clock Setting
+    
                   ->Core Clock 16.0 Mhz
+                  
                                        -> leave other as it is
 
 
