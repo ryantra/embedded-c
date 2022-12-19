@@ -57,9 +57,13 @@ Right click on the project
 Open syscalls.c file and paste following code bellow Includes
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //           Implementation of printf like feature using ARM Cortex M3/M4/ ITM functionality
+
 //           This function will not work for ARM Cortex M0/M0+
+
 //           If you are using Cortex M0, then you can use semihosting feature of openOCD
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -102,11 +106,12 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
 5.Debug Configuration Setting for Serial Wire Viewer
 
 In Debugger Menu under Serial Wire Viewer(SWV) make SWV enable with following settings
-    -> Clock Setting
+
+      -> Clock Setting
     
-                  ->Core Clock 16.0 Mhz
+      -> Core Clock 16.0 Mhz
                   
-                                       -> leave other as it is
+      -> Leave other as it is
 
 
     
