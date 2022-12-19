@@ -94,7 +94,9 @@ Open syscalls.c file and paste following code bellow Includes
    }
  
 After that find function _write and replace __io_putchar(*ptr++) with ITM_SendChar(*ptr++) like in code snippet below
+
 __attribute__((weak)) int _write(int file, char *ptr, int len)
+
    {
         int DataIdx;
 
