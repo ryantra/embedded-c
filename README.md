@@ -8,16 +8,21 @@ Following step were perfom strickly to (Environment setup) build, debug and runn
 
 1.STM32CubeIDE Generic Linux Installer.
 
+Downloading link STMCUBE32 IDE
+
+   https://www.st.com/en/development-tools/stm32cubeide.html
+
 Once zip downloaded and extracted you get a .sh script file.
-Make it executable (chmod +x ***.sh)
+Make it executable (chmod +x ***.sh) opening in terminal.
  
 For Ubuntu, either:
    
-   1. sudo ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle​.sh
+    1. sudo ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle​.sh
 
 or 
    
-   1. ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64​.sh
+    1. ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64​.sh
+
 
 The 2nd will ask you later to execute some install steps as sudo. This is required since STLink-Server, Udev rules for 
 STLink/Jlink installation need to change some basic system settings.
@@ -26,10 +31,11 @@ STLink/Jlink installation need to change some basic system settings.
 
 Before installing the GCC compiler on your Linux system, you need to check whether it is already installed on your system or not.
 
-gcc –version
+      gcc –version
 
 If gcc is installed already skip this step and jump into next step, otherwise 
-sudo apt install build-essential
+
+      sudo apt install build-essential
 
 
 3.FPU warning fix
@@ -95,9 +101,9 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
 
 5.Debug Configuration Setting for Serial Wire Viewer
 In Debugger Menu under Serial Wire Viewer(SWV) make SWV enable with following settings
-Clock Setting
-Core Clock 16.0 Mhz
-leave other as it is
+  -> Clock Setting
+                  ->Core Clock 16.0 Mhz
+                                       -> leave other as it is
 
 
     
