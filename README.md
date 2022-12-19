@@ -69,16 +69,16 @@ Open syscalls.c file and paste following code bellow Includes
 
 //Debug Exception and Monitor Control Register base address
 
-#define DEMCR                   *((volatile uint32_t*) 0xE000EDFCU )
+   #define DEMCR                   *((volatile uint32_t*) 0xE000EDFCU )
+   
+   /* ITM register addresses */
 
-/* ITM register addresses */
+   #define ITM_STIMULUS_PORT0      *((volatile uint32_t*) 0xE0000000 )
 
-#define ITM_STIMULUS_PORT0      *((volatile uint32_t*) 0xE0000000 )
+   #define ITM_TRACE_EN            *((volatile uint32_t*) 0xE0000E00 )
 
-#define ITM_TRACE_EN            *((volatile uint32_t*) 0xE0000E00 )
-
-void ITM_SendChar(uint8_t ch)
-{
+   void ITM_SendChar(uint8_t ch)
+   {
 
         //Enable TRCENA
         DEMCR |= ( 1 << 24);
@@ -91,11 +91,11 @@ void ITM_SendChar(uint8_t ch)
 
         //Write to ITM stimulus port0
         ITM_STIMULUS_PORT0 = ch;
-}
+   }
  
 After that find function _write and replace __io_putchar(*ptr++) with ITM_SendChar(*ptr++) like in code snippet below
 __attribute__((weak)) int _write(int file, char *ptr, int len)
-{
+   {
         int DataIdx;
 
         for (DataIdx = 0; DataIdx < len; DataIdx++)
@@ -104,7 +104,7 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
                 ITM_SendChar(*ptr++);
         }
         return len;
-}
+   }
 
 5.Debug Configuration Setting for Serial Wire Viewer
 
