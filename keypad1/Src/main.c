@@ -23,10 +23,10 @@ int main(void)
 	uint32_t volatile *const pClockCtrlReg  = (uint32_t*)(0x40023800+0x30);
 	uint32_t volatile *const pPullupDownReg = (uint32_t*)(0x40020800+0x0C);
 
-	//1.Enable the peripheral clock of GPIOA peripheral
+	//1.Enable the peripheral clock of GPIOC peripheral
 	*pClockCtrlReg |= (1 << 2);
 
-	//2.Configure PB3,PB4,PB5,PB6 as output (rows)
+	//2.Configure PC0,PC1,PC2,PC3 as output (rows)
 	*pGPIOCModeReg &= ~(0XFF );	//clear
 	*pGPIOCModeReg |= 0x55;			//set
 

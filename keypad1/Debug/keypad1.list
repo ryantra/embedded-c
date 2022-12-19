@@ -130,7 +130,7 @@ int main(void)
  800021a:	4b88      	ldr	r3, [pc, #544]	; (800043c <main+0x238>)
  800021c:	607b      	str	r3, [r7, #4]
 
-	//1.Enable the peripheral clock of GPIOA peripheral
+	//1.Enable the peripheral clock of GPIOC peripheral
 	*pClockCtrlReg |= (1 << 2);
  800021e:	68bb      	ldr	r3, [r7, #8]
  8000220:	681b      	ldr	r3, [r3, #0]
@@ -138,7 +138,7 @@ int main(void)
  8000226:	68bb      	ldr	r3, [r7, #8]
  8000228:	601a      	str	r2, [r3, #0]
 
-	//2.Configure PB3,PB4,PB5,PB6 as output (rows)
+	//2.Configure PC0,PC1,PC2,PC3 as output (rows)
 	*pGPIOCModeReg &= ~(0XFF );	//clear
  800022a:	697b      	ldr	r3, [r7, #20]
  800022c:	681b      	ldr	r3, [r3, #0]
